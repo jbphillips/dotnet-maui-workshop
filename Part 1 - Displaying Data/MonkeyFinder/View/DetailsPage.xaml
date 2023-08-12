@@ -4,13 +4,13 @@
              x:Class="MonkeyFinder.DetailsPage"             
              xmlns:viewmodel="clr-namespace:MonkeyFinder.ViewModel"
              x:DataType="viewmodel:MonkeyDetailsViewModel"
+             Shell.PresentationMode="ModalAnimated"
              Title="{Binding Monkey.Name}">
 
-    <!--<Label Text="{Binding Monkey.Details}" 
-           FontSize="25"/>-->
+    <!--Shell.PresentationMode="ModalAnimated"-->
 
-    <ScrollView>
-        <VerticalStackLayout>
+    <ScrollView>        
+        <VerticalStackLayout>            
             <Grid ColumnDefinitions="*, Auto, *"
                   RowDefinitions="160, Auto" >
 
@@ -55,6 +55,15 @@
                        Style="{StaticResource MicroLabel}"/>
 
             </VerticalStackLayout>
+            
+            <!--i only need this button if i use the shell presentation modal feature set in the header on top of this page-->
+            <Grid Padding="8">
+                <Button Text="Go Back"
+                        WidthRequest="100"
+                        HorizontalOptions="Start"
+                        Style="{StaticResource ButtonOutline}"
+                        Command="{Binding GoBackCommand}" />
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 
