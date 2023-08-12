@@ -28,6 +28,9 @@ public partial class MonkeysViewModel : BaseViewModel
 
     }
 
+    [ObservableProperty]
+    bool isRefreshing;
+
     [RelayCommand]
     async Task GetClosestMonkeyAsync(Monkey monkey)
     {
@@ -118,6 +121,7 @@ public partial class MonkeysViewModel : BaseViewModel
         finally 
         { 
             IsBusy = false;
+            IsRefreshing = false;
         }
     }
 }
