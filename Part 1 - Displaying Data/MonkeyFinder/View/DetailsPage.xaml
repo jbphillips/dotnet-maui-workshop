@@ -57,12 +57,21 @@
             </VerticalStackLayout>
             
             <!--i only need this button if i use the shell presentation modal feature set in the header on top of this page-->
-            <Grid Padding="8">
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="5"
+                  Padding="8">  
                 <Button Text="Go Back"
+                        Grid.Column="0"
                         WidthRequest="100"
                         HorizontalOptions="Start"
                         Style="{StaticResource ButtonOutline}"
                         Command="{Binding GoBackCommand}" />
+                <Button Text="Show Map"
+                        Grid.Column="1"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Style="{StaticResource ButtonOutline}"
+                        Command="{Binding OpenMapCommand}" />
             </Grid>
         </VerticalStackLayout>
     </ScrollView>
